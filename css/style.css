@@ -1,0 +1,120 @@
+body {
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif; 
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 1.5rem;
+    padding: 20px;
+    background-color: rgb(183, 209, 241);
+}
+
+.interaccion{
+    margin: 0 20px;
+    border-radius: 20px;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+}
+
+#detalle-gasto {
+    display: flex;
+    flex-direction: column;
+}
+
+#detalle-gasto div{
+    display: flex;
+    align-items: center;
+}
+
+#detalle-gasto button {
+    width: 5vw;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#secciones {
+    text-align: center;
+    display: grid;
+    padding: 20px 0;
+    overflow-y: scroll;
+    height: calc(100vh - 120px);
+    background-image: url("./../img/fondo.png");
+    background-size: cover;
+}
+
+#secciones::-webkit-scrollbar{
+    width: 12px;
+}
+#secciones::-webkit-scrollbar-thumb{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lightgray;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+#secciones::-webkit-scrollbar-track {
+    border: 1px solid #000;
+    background-color: lightblue;
+  }
+
+.itinerario {
+    padding: 5px;
+    margin: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+   
+}
+
+.itinerario p, .itinerario span{
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.gasto-pais {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+   
+}
+
+.gasto-pais div{
+    display: flex;
+}
+
+.gasto-pais button{
+    border-radius: 20px;
+    height: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.gasto-itinerario{
+    font-size: 10px;
+}
+
+.valor-gasto{
+    width: 80px;
+    height: 20px; 
+    border-radius: 20px;
+    margin-right: 300px;
+    margin-top: 10px;
+
+}
+
+.agrega-gasto{
+    display: flex;
+}

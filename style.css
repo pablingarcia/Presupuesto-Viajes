@@ -1,0 +1,61 @@
+body {
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+header {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-evenly;
+    height: 50vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    /*porque no lo toma?*/
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+}
+
+#detalle-gasto {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 5vw;
+}
+
+#secciones {
+    background-color: lightcoral;
+    height: 100vh;
+    text-align: center;
+    display: grid;
+    padding: 20px;
+}
+
+.itinerario {
+    padding: 5px;
+    background-color: lightgray;
+    height: 30vh;
+}
+
+.gasto-pais {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    text-align: left;
+    /*porque no lo toma? quiero que luego del input el resto baje*/
+}
+
+.gasto-itinerario{
+    font-size: 10px;
+}
+
+.valor-gasto{
+    width: 5px; /*porque no lo toma?*/
+    border-radius: 50%;
+}
