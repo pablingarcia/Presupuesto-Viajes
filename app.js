@@ -8,6 +8,13 @@ const divDineroDisponible = document.getElementById("div-dinero-disponible")
 
 let valorDineroDisponible = dineroDisponible.value;
 
+let estadoAplicacion = {
+    disponible: 0,
+    paises: []
+}
+
+leerEstado();
+
 botonDineroDisponible.addEventListener("click", () =>{
     
 
@@ -19,6 +26,7 @@ botonDineroDisponible.addEventListener("click", () =>{
 
    
     nuevoDineroP.textContent = dineroDisponible.value;
+    nuevoDineroP.id = "dineroDisponible"
 
     divDineroDisponible.appendChild(nuevoDineroP);
     divDineroDisponible.removeChild(dineroDisponible);
@@ -35,6 +43,7 @@ botonDineroReset.addEventListener("click", () =>{
 
     dineroDisponible.value = "";
     actualizarSobrante()
+    
 })
 })
 
@@ -176,7 +185,49 @@ function UpdateCardValue(card) {
         let restaSobrante = pDineroDisponible - montoPresupuestoEstimado;
         sobrante.textContent = restaSobrante;
 
-      
+        actualizarEstado();
     }
+
+    const botonAgregarTarjeta = document.getElementById("boton-agrega-tarjeta");
+    const itinerario = document.getElementsByClassName("itinerario");
+    const botonEliminarTarjeta = document.getElementsByClassName("boton-elimina-tarjeta");
+
+    //Agregando una nueva tarjeta (no funciona, ver de eliminar todas las tarjetas.
+    //Además, ver eventos sobre cada nueva tarjeta)
+    
+    botonAgregarTarjeta.addEventListener("click", () =>{
+        let itinerarioPadre = itinerario[0].parentElement;
+        let nuevaTarjeta = Array.from(itinerario)[0];
      
+        itinerarioPadre.append(nuevaTarjeta);
+        console.log(nuevaTarjeta)
+    })
+     
+
+    //Eliminar tarjeta
+    botonEliminarTarjeta[0].addEventListener("click", () =>{
+        itinerario[0].remove(itinerario[0])
+    })
+
+    
+    function actualizarEstado() {
+        let montoDineroDisponible = document.getElementById("dineroDisponible");
+
+        if(montoDineroDisponible == null){
+            estadoAplicacion.disponible = 0;
+        } else{
+            estadoAplicacion.disponible = parseInt(montoDineroDisponible.innerText);
+        }
+        
+       
+        window.localStorage.setItem("estadoAplicacion", JSON.stringify(estadoAplicacion));
+    
+        console.log(estadoAplicacion);
+    }
+
+    function leerEstado() {
+        let estadoPagina = JSON.parse(window.localStorage.getItem("estadoAplicacion"));
+        estadoAplicacion = estadoPagina;
+        console.log(estadoAplicacion);
+    }
 

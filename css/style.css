@@ -8,6 +8,12 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+input{
+    border-radius: 20px;
+    width: 8vw;
+    height: 3vh;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -76,12 +82,13 @@ header {
     margin: 20px;
     border: 1px solid black;
     border-radius: 20px;
+    height: 15vh;
    
 }
 
 .itinerario p, .itinerario span{
     font-size: 1.5rem;
-    padding: 10px;
+    padding: 5px;
 }
 
 .gasto-pais {
@@ -117,4 +124,15 @@ header {
 
 .agrega-gasto{
     display: flex;
+}
+
+#boton-agrega-tarjeta{
+    width: 5vw;
+    height: 5vh;
+}
+
+.boton-elimina-tarjeta{
+    width: 1vw;
+    height: 1vh;
+    
 }
